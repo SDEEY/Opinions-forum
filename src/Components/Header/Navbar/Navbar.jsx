@@ -17,17 +17,17 @@ function Navbar(){
                 </li>
                 <li>
                     <NavLink to='/news'>
-                        news
+                        News
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/posts'>
-                        posts
+                        Posts
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/articles'>
-                        articles
+                        Articles
                     </NavLink>
                 </li>
             </ul>

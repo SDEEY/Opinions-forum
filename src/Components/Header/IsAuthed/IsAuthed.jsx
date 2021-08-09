@@ -1,9 +1,10 @@
 import {NavLink} from "react-router-dom";
+import s from '../Navbar/Navbar.module.css'
 
 function IsAuthed() {
     return (
         <div>
-            <ul>
+            <ul className={s.ul}>
                 <li>
                     <NavLink to='/signIn'>
                         SignIn
