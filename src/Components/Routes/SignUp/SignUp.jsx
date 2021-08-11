@@ -1,28 +1,28 @@
 import {useForm} from "react-hook-form";
 import s from './SignUp.module.css'
+// import {Redirect} from "react-router-dom";
+import {authApi} from "../../../api/api";
 
 function SignUp() {
     const {register, formState: {errors}, handleSubmit} = useForm();
 
-    const onSubmit = data => console.log(data)
 
-    console.log(errors)
     return (
         <div className={s.form}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={s.errorBlock}>
-                    <div>
-                        <label htmlFor='username'>Username</label>
-                        <input type='text' {...register("username", {
-                            required: true,
-                            maxLength: 15,
-                            pattern: /^[A-Za-z0-9]+$/i
-                        })} />
-                    </div>
-                    <div className={s.error}>
-                        {errors.username && "Username is required, max length 15 symbols"}
-                    </div>
-                </div>
+            <form onSubmit={handleSubmit(authApi.signUpWithEmailAndPassword)}>
+                {/*<div className={s.errorBlock}>*/}
+                {/*    <div>*/}
+                {/*        <label htmlFor='username'>Username</label>*/}
+                {/*        <input type='text' {...register("username", {*/}
+                {/*            required: true,*/}
+                {/*            maxLength: 15,*/}
+                {/*            pattern: /^[A-Za-z0-9]+$/i*/}
+                {/*        })} />*/}
+                {/*    </div>*/}
+                {/*    <div className={s.error}>*/}
+                {/*        {errors.username && "Username is required, max length 15 symbols"}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <div className={s.errorBlock}>
                     <div>
                         <label htmlFor='email'>Email</label>
