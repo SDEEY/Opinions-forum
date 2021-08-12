@@ -12,9 +12,8 @@ export const authApi = {
                 'Content-Type': 'application/json'
             }
         })
-        const json = await response.json()
-         console.log(json)
-
+         const signInJson = await response.json()
+         return signInJson
     },
 
     async signUpWithEmailAndPassword (data){
@@ -27,8 +26,7 @@ export const authApi = {
                 'Content-Type': 'application/json'
             }
         })
-        const json = await response.json()
-        console.log(json)
-        // {json.idToken && <Redirect to='/myProfile'/>}
+        const signUpJson = await response.json()
+        return signUpJson
     }
 }

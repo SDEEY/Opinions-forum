@@ -3,8 +3,6 @@ import {authApi} from "../../api/api";
 const SET_USER_DATA = 'SET_USER_DATA'
 
 let initialState = {
-    email: null,
-    password: null,
     isAuth: false
 }
 
@@ -22,11 +20,16 @@ const authReducer = (state = initialState, action) => {
 
 export const setUserData = () => ({type: SET_USER_DATA})
 
-export const signInWithEmailAndPasswordThunk = (data) => {
-    return async (dispatch) => {
-        await authApi.signInWithEmailAndPassword(data)
-        dispatch(setUserData())
-    }
+export const signInWithEmailAndPasswordThunk = (data) => async (dispatch) => {
+        const signInJson = await authApi.signInWithEmailAndPassword(data)
+        console.log(signInJson)
+        !signInJson.error ? dispatch(setUserData()) : alert(signInJson.error.message)
+}
+
+export const signUpWithEmailAndPasswordThunk = (data) => async (dispatch) => {
+    const signUpJson = await authApi.signUpWithEmailAndPassword(data)
+    console.log(signUpJson)
+    !signUpJson.error ? dispatch(setUserData()) : alert(signUpJson.error.message)
 }
 
 export default authReducer

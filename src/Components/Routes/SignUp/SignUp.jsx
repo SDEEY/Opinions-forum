@@ -1,28 +1,22 @@
 import {useForm} from "react-hook-form";
 import s from './SignUp.module.css'
 // import {Redirect} from "react-router-dom";
-import {authApi} from "../../../api/api";
+import {useDispatch, useSelector} from "react-redux";
+import {signUpWithEmailAndPasswordThunk} from "../../../redux/reducers/auth-reducer";
+import {Redirect} from "react-router-dom";
 
 function SignUp() {
     const {register, formState: {errors}, handleSubmit} = useForm();
 
+    const dispatch = useDispatch()
+    const isAuth = useSelector(state => state.authReducer.isAuth)
+
+    const signUpWithEmailAndPassword = data => dispatch(signUpWithEmailAndPasswordThunk(data))
 
     return (
+        isAuth === true ? <Redirect to='/myProfile'/> :
         <div className={s.form}>
-            <form onSubmit={handleSubmit(authApi.signUpWithEmailAndPassword)}>
-                {/*<div className={s.errorBlock}>*/}
-                {/*    <div>*/}
-                {/*        <label htmlFor='username'>Username</label>*/}
-                {/*        <input type='text' {...register("username", {*/}
-                {/*            required: true,*/}
-                {/*            maxLength: 15,*/}
-                {/*            pattern: /^[A-Za-z0-9]+$/i*/}
-                {/*        })} />*/}
-                {/*    </div>*/}
-                {/*    <div className={s.error}>*/}
-                {/*        {errors.username && "Username is required, max length 15 symbols"}*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+            <form onSubmit={handleSubmit(signUpWithEmailAndPassword)}>
                 <div className={s.errorBlock}>
                     <div>
                         <label htmlFor='email'>Email</label>
@@ -35,10 +29,10 @@ function SignUp() {
                 <div className={s.errorBlock}>
                     <div>
                         <label htmlFor='password'>Password</label>
-                        <input type='password' {...register("password", {required: true, minLength: 8})} />
+                        <input type='password' {...register("password", {required: true, minLength: 6})} />
                     </div>
                     <div className={s.error}>
-                        {errors.password && "Password is required, min length 8 symbols"}
+                        {errors.password && "Password is required, min length 6 symbols"}
                     </div>
                 </div>
 

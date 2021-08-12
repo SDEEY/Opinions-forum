@@ -1,17 +1,16 @@
 import {useForm} from "react-hook-form";
 import s from "../SignUp/SignUp.module.css";
-// import {authApi} from '../../../api/api'
 import {useDispatch, useSelector} from "react-redux";
 import {signInWithEmailAndPasswordThunk} from "../../../redux/reducers/auth-reducer";
 import {Redirect} from "react-router-dom";
-import PersonalProfile from "../PersonalProfile/PersonalProfile";
 
 function SignIn(){
     const {register, formState: {errors}, handleSubmit} = useForm();
+
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.authReducer.isAuth)
 
-    const signInWithEmailAndPassword = (data) => dispatch(signInWithEmailAndPasswordThunk(data))
+    const signInWithEmailAndPassword = data => dispatch(signInWithEmailAndPasswordThunk(data))
 
     return(
         isAuth === true ? <Redirect to='/myProfile'/> :
@@ -35,7 +34,6 @@ function SignIn(){
                         {errors.password && "Password is required, min length 6 symbols"}
                     </div>
                 </div>
-
                 <button className={s.button} type="submit">Sign in</button>
             </form>
         </div>
