@@ -1,3 +1,4 @@
+// import * as axios from "axios"
 const apiKey = 'AIzaSyCD_vhkYWg-cFyACxAiufKeSiaQwzNIWWw'
 const baseUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:'
 
@@ -12,8 +13,7 @@ export const authApi = {
                 'Content-Type': 'application/json'
             }
         })
-         const signInJson = await response.json()
-         return signInJson
+         return await response.json()
     },
 
     async signUpWithEmailAndPassword (data){
@@ -26,7 +26,12 @@ export const authApi = {
                 'Content-Type': 'application/json'
             }
         })
-        const signUpJson = await response.json()
-        return signUpJson
+        return await response.json()
+    }
+}
+
+export const ownProfileApi = {
+    async setOwnAvatar (){
+        return await fetch('https://picsum.photos/150')
     }
 }

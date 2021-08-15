@@ -1,0 +1,21 @@
+.avaAndNickBlock{
+    display: flex;
+    align-items: center;
+}
+
+.avaAndNickBlock div:last-child{
+    font-size: 0px;
+}
+
+.avaAndNickBlock img{
+    padding: 0 10px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.textDecoration{
+    text-decoration: none
+}

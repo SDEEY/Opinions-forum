@@ -1,0 +1,18 @@
+.avatarBlock div{
+    font-size: 0;
+}
+
+.avatarBlock button{
+    font-size: 18px;
+    width: 150px;
+    padding: 3px 0;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+    margin-top: 7px;
+}
+
+.avatarBlock button:focus{
+    outline: .1em solid #7b7b86;
+}
