@@ -3,4 +3,28 @@
     padding: 20px 0 0 25px;
 
     background-color: #e5e5e5;
+    position: relative;
+}
+
+.dataDate{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.signOut button{
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+
+.ownProfile button:focus{
+    outline: .1em solid #7b7b86;
 }

@@ -12,4 +12,6 @@
 //     measurementId: "G-X37QP5HDNB"
 // };
 // // Initialize Firebase
-// export const app = firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
+//
+// export const auth = firebase.auth()
