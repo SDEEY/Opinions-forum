@@ -1,0 +1,40 @@
+.span:hover{
+    background-color: #c2c2c2;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+}
+
+.form input{
+    height: 27px;
+    box-sizing: border-box;
+    outline: .1em solid #c2c2c2;;
+    font-size: 18px;
+    border: none;
+    margin-right: 10px;
+}
+
+.form input:focus{
+    outline: .1em solid #7b7b86;
+
+}
+
+.form button{
+    font-size: 18px;
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.form button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.form button:hover{
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}

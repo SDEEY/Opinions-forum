@@ -1,0 +1,88 @@
+.span:hover{
+    background-color: #c2c2c2;
+}
+
+.socialMediaBlock{
+
+}
+
+.socialMediaBlock div span:hover{
+    background-color: #c2c2c2;
+}
+
+.socialMediaBlock a{
+    text-decoration: none;
+}
+
+.socialMediaBlock a:hover{
+    text-decoration: underline;
+}
+
+.formsBlock{
+    outline: .1em solid #7b7b86;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 292px;
+}
+
+.formsBlock div{
+    margin-bottom: 10px;
+}
+
+.formsBlock a{
+    text-decoration: none;
+}
+
+.formsBlock a:hover{
+    text-decoration: underline;
+}
+
+.formsBlock div form input{
+    height: 27px;
+    box-sizing: border-box;
+    outline: .1em solid #c2c2c2;;
+    font-size: 18px;
+    border: none;
+    margin-right: 10px;
+}
+
+
+.formsBlock div form input:focus{
+    outline: .1em solid #7b7b86;
+
+}
+
+.formsBlock div form button{
+    font-size: 18px;
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.formsBlock div form button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.formsBlock div form button:hover{
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}
+
+.closeButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 18px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.divLastChild{
+    margin-bottom: 0!important;
+}

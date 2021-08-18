@@ -4,7 +4,7 @@ const SET_USER_DATA = 'SET_USER_DATA'
 const SET_IS_AUTH_TO_FALSE = 'SET_IS_AUTH_TO_FALSE'
 
 let initialState = {
-    nickname: 'nickname',
+    // nickname: 'nickname',
     isAuth: false,
     idToken: null
 }
@@ -15,7 +15,7 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isAuth: true,
-                nickname: action.payload.nickname,
+                // nickname: action.payload.nickname,
                 idToken: action.payload.idToken
             }
         case SET_IS_AUTH_TO_FALSE:
@@ -28,7 +28,7 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setUserData = (nickname, idToken) => ({type: SET_USER_DATA, payload: {nickname, idToken}})
+export const setUserData = (idToken) => ({type: SET_USER_DATA, payload: {idToken}})
 
 export const setIsAuthToFalse = () => ({type: SET_IS_AUTH_TO_FALSE})
 
@@ -36,13 +36,13 @@ export const setIsAuthToFalse = () => ({type: SET_IS_AUTH_TO_FALSE})
 export const signInWithEmailAndPasswordThunk = (data) => async (dispatch) => {
     const signInJson = await authApi.signInWithEmailAndPassword(data)
     console.log(signInJson)
-    !signInJson.error ? dispatch(setUserData(signInJson.email, signInJson.idToken)) : alert(signInJson.error.message)
+    !signInJson.error ? dispatch(setUserData(signInJson.idToken)) : alert(signInJson.error.message)
 }
 
 export const signUpWithEmailAndPasswordThunk = (data) => async (dispatch) => {
     const signUpJson = await authApi.signUpWithEmailAndPassword(data)
     console.log(signUpJson)
-    !signUpJson.error ? dispatch(setUserData(signUpJson.email, signUpJson.idToken)) : alert(signUpJson.error.message)
+    !signUpJson.error ? dispatch(setUserData(signUpJson.idToken)) : alert(signUpJson.error.message)
 }
 
 export default authReducer

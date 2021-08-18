@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 
 function IsAuthed() {
     const isAuth = useSelector(state => state.authReducer.isAuth)
-    const nickname = useSelector(state => state.authReducer.nickname)
+    const nickname = useSelector(state => state.ownProfileReducer.nickname)
     const avatar = useSelector(state => state.ownProfileReducer.avatar)
 
     return (

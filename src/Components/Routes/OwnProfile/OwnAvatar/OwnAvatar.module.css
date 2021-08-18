@@ -1,3 +1,7 @@
+.avatarBlock{
+    margin-right: 15px;
+}
+
 .avatarBlock div{
     font-size: 0;
 }
@@ -14,5 +18,10 @@
 }
 
 .avatarBlock button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.avatarBlock button:hover{
+    background-color: #ababab;
     outline: .1em solid #7b7b86;
 }

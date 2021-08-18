@@ -36,6 +36,36 @@ export const ownProfileApi = {
         return await fetch('https://picsum.photos/150')
     },
 
+    async setOwnNickname(idToken) {
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyCD_vhkYWg-cFyACxAiufKeSiaQwzNIWWw', {
+            method: 'POST',
+            body: JSON.stringify({
+                idToken: `${idToken}`
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        return await response.json()
+    },
+
+    async updateOwnNickname(idToken, displayName){
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCD_vhkYWg-cFyACxAiufKeSiaQwzNIWWw', {
+            method: 'POST',
+            body: JSON.stringify({
+                idToken: `${idToken}`,
+                displayName: `${displayName}`,
+                returnSecureToken: true
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        console.log(response)
+        return await response.json()
+
+    },
+
     async getOwnDateData(idToken) {
         const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyCD_vhkYWg-cFyACxAiufKeSiaQwzNIWWw', {
             method: 'POST',
@@ -48,4 +78,6 @@ export const ownProfileApi = {
         })
         return await response.json()
     }
+
+
 }
