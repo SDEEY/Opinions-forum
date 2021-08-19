@@ -11,20 +11,6 @@ function Nickname() {
 
     const dispatch = useDispatch()
 
-    const updateOwnNickname = (e) => {
-        e.preventDefault()
-
-        const displayName = e.target[0].value
-
-        if(displayName.length <= 20){
-            dispatch(updateOwnNicknameThunk(idToken, displayName))
-            setEditMode(false)
-        } else {
-            setEditMode(false)
-            alert('max length 20')
-        }
-    }
-
     useEffect(() => {
         dispatch(setOwnNicknameThunk(idToken))
     }, [])
@@ -39,6 +25,20 @@ function Nickname() {
             alert('max length 20')
         }
 
+    }
+
+    const updateOwnNickname = (e) => {
+        e.preventDefault()
+
+        const displayName = e.target[0].value
+
+        if(displayName.length <= 20){
+            dispatch(updateOwnNicknameThunk(idToken, displayName))
+            setEditMode(false)
+        } else {
+            setEditMode(false)
+            alert('max length 20')
+        }
     }
 
     return (

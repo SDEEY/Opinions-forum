@@ -28,7 +28,33 @@ export const authApi = {
             }
         })
         return await response.json()
-    }
+    },
+
+    async changeEmail(idToken, email) {
+        const response = await fetch(`${baseUrl}update?key=${apiKey}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                idToken: `${idToken}`, email, returnSecureToken: true
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        return await response.json()
+    },
+
+    async changePassword(idToken, password) {
+        const response = await fetch(`${baseUrl}update?key=${apiKey}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                idToken: `${idToken}`, password, returnSecureToken: true
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        return await response.json()
+    },
 }
 
 export const ownProfileApi = {

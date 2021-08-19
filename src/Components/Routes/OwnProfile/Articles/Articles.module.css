@@ -1,0 +1,17 @@
+.articles button{
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.articles button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.articles button:hover{
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}

@@ -5,8 +5,10 @@ import {useDispatch, useSelector} from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import {setIsAuthToFalse} from "../../../redux/reducers/auth-reducer";
 import DateData from "./DateData/DateData";
+import Articles from "./Articles/Articles";
+import Posts from "./Posts/Posts";
 
-function OwnProfile(){
+function OwnProfile() {
     const isAuth = useSelector(state => state.authReducer.isAuth)
 
     const dispatch = useDispatch()
@@ -14,17 +16,23 @@ function OwnProfile(){
     const logout = () => dispatch(setIsAuthToFalse())
 
 
-    return(
+    return (
         isAuth
-        ? <div className={s.ownProfile}>
-            <OwnAvatar/>
-            <OwnInformation/>
-            <DateData/>
-            <div className={s.signOut}>
-                <button onClick={logout}>sign out</button>
+            ? <div className={s.ownProfile}>
+                <div className={s.ownProfileDivFirstChild}>
+                    <OwnAvatar/>
+                    <OwnInformation/>
+                    <DateData/>
+                </div>
+                <div className={s.ownProfileDivLastChild}>
+                    <Articles/>
+                    <Posts/>
+                    <div className={s.signOut}>
+                        <button onClick={logout}>sign out</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        : <SignIn/>
+            : <SignIn/>
     )
 }
 

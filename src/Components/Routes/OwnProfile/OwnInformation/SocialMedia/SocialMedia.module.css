@@ -2,16 +2,9 @@
     background-color: #c2c2c2;
 }
 
-.socialMediaBlock{
-
-}
-
-.socialMediaBlock div span:hover{
-    background-color: #c2c2c2;
-}
-
 .socialMediaBlock a{
     text-decoration: none;
+    color: #0f1dfd;
 }
 
 .socialMediaBlock a:hover{
@@ -24,6 +17,12 @@
     position: relative;
     overflow: hidden;
     width: 292px;
+    transition: .5s;
+    opacity: 70%;
+}
+
+.formsBlock:hover{
+    opacity: 100%;
 }
 
 .formsBlock div{

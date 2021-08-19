@@ -1,10 +1,11 @@
 .avaAndNickBlock{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .avaAndNickBlock div:last-child{
-    font-size: 0px;
+    font-size: 0;
 }
 
 .avaAndNickBlock img{
@@ -15,7 +16,148 @@
     border-radius: 50%;
 }
 
-
 .textDecoration{
     text-decoration: none
+}
+
+.myProfileNavLinkButton{
+    font-size: 18px;
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.myProfileNavLinkButton:focus{
+    outline: .1em solid #7b7b86;
+}
+
+
+
+.editModeContainer{
+    position: absolute;
+    top: 58px;
+    right: 0;
+    z-index: 1000;
+}
+
+.editMode {
+    position: relative;
+
+    border: .1em solid #7b7b86;
+    border-top: none;
+    padding: 10px;
+    transition: .5s;
+    background-color: #e5e5e5;
+}
+
+
+
+.editMode ul{
+    margin: 0;
+    padding: 0 10px;
+}
+
+.editMode ul li{
+    list-style-type: none;
+    margin-top: 3px;
+}
+
+.editMode ul li:nth-child(2){
+    margin-bottom: 17px;
+}
+
+.formEmail{
+    position: absolute;
+    top: 33px;
+    right: 180px;
+}
+
+.formEmail form{
+    display: flex;
+}
+
+.formEmail form input{
+    height: 27px;
+    box-sizing: border-box;
+    outline: .1em solid #c2c2c2;;
+    font-size: 18px;
+    border: none;
+    margin-left: 10px;
+}
+
+.formEmail form input:focus{
+    outline: .1em solid #7b7b86;
+
+}
+
+.formEmail form button{
+    font-size: 18px;
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.formEmail form button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.formEmail form button:hover{
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}
+
+
+.formPassword{
+    position: absolute;
+    top: 71px;
+    right: 180px;
+}
+
+.formPassword form{
+    display: flex;
+}
+
+.formPassword form input{
+    height: 27px;
+    box-sizing: border-box;
+    outline: .1em solid #c2c2c2;;
+    font-size: 18px;
+    border: none;
+    margin-left: 10px;
+}
+
+.formPassword form input:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.formPassword form button{
+    font-size: 18px;
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+}
+
+.formPassword form button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.formPassword form button:hover{
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}
+
+.relativeFormContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.relativeForm{
+    position: relative;
 }

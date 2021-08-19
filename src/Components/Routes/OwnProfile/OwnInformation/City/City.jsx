@@ -28,7 +28,7 @@ function City() {
             dispatch(setOwnCity(cityValue))
             setEditMode(false)
         } else if(!cityValue){
-            dispatch(setOwnCity('-----'))
+            dispatch(setOwnCity(''))
             setEditMode(false)
         } else {
             setEditMode(false)
@@ -42,7 +42,7 @@ function City() {
             dispatch(setOwnCity(cityValue))
             setEditMode(false)
         } else if(!cityValue){
-            dispatch(setOwnCity('-----'))
+            dispatch(setOwnCity(''))
             setEditMode(false)
         } else {
             alert('max length 20')

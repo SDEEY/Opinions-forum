@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
+// import {useEffect} from "react";
 import s from './SocialMedia.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {
@@ -15,9 +16,9 @@ function SocialMedia() {
     const dispatch = useDispatch()
 
 
-    useEffect(() => {
-
-    }, [])
+    // useEffect(() => {
+    //
+    // }, [])
 
     const updateOwnInstagram = (e) => {
         e.preventDefault()
@@ -69,22 +70,22 @@ function SocialMedia() {
                     <div className={s.socialMediaBlock}>
                         <div>
                             <span>Instagram: </span>
-                            <a href={`${socialMedia.instagram}`} target={'_blank'}>{socialMedia.instagram}</a>
+                            <a href={`${socialMedia.instagram}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.instagram}</a>
                         </div>
                         <div>
                             <span>Vk: </span>
-                            <a href={`${socialMedia.vk}`} target={'_blank'}>{socialMedia.vk}</a>
+                            <a href={`${socialMedia.vk}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.vk}</a>
                         </div>
                         <div>
                             <span>Telegram: </span>
-                            <a href={`${socialMedia.telegram}`} target={'_blank'}>{socialMedia.telegram}</a>
+                            <a href={`${socialMedia.telegram}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.telegram}</a>
                         </div>
                     </div> :
                     <div className={s.formsBlock}>
                         <div>
                             <div>
                                 <span>Instagram: </span>
-                                <a href={`${socialMedia.instagram}`} target={'_blank'}>{socialMedia.instagram}</a>
+                                <a href={`${socialMedia.instagram}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.instagram}</a>
                             </div>
                             <form onSubmit={updateOwnInstagram}>
                                 <input placeholder={'instagram'} type={'text'} autoFocus={true}/>
@@ -94,7 +95,7 @@ function SocialMedia() {
                         <div>
                             <div>
                                 <span>Vk: </span>
-                                <a href={`${socialMedia.vk}`} target={'_blank'}>{socialMedia.vk}</a>
+                                <a href={`${socialMedia.vk}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.vk}</a>
                             </div>
                             <form onSubmit={updateOwnVk}>
                                 <input placeholder={'vk'} type={'text'}/>
@@ -104,7 +105,7 @@ function SocialMedia() {
                         <div className={s.divLastChild}>
                             <div>
                                 <span>Telegram: </span>
-                                <a href={`${socialMedia.telegram}`} target={'_blank'}>{socialMedia.telegram}</a>
+                                <a href={`${socialMedia.telegram}`} target={'_blank'} rel={'noreferrer'}>{socialMedia.telegram}</a>
                             </div>
                             <form onSubmit={updateOwnTelegram}>
                                 <input placeholder={'telegram'} type={'text'}/>

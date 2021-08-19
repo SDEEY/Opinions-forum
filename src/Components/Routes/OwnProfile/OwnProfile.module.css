@@ -1,5 +1,5 @@
 .ownProfile{
-    display: flex;
+    /*display: flex;*/
     padding: 20px 0 0 25px;
     height: 400px;
 
@@ -7,10 +7,12 @@
     position: relative;
 }
 
-.dataDate{
-    position: absolute;
-    right: 0;
-    top: 0;
+.ownProfileDivFirstChild{
+    display: flex;
+    margin-bottom: 100px;
+}
+.ownProfileDivLastChild{
+    display: flex;
 }
 
 .signOut button{
