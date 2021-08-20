@@ -7,6 +7,7 @@ import {setIsAuthToFalse} from "../../../redux/reducers/auth-reducer";
 import DateData from "./DateData/DateData";
 import Articles from "./Articles/Articles";
 import Posts from "./Posts/Posts";
+import {NavLink} from "react-router-dom";
 
 function OwnProfile() {
     const isAuth = useSelector(state => state.authReducer.isAuth)
@@ -28,7 +29,9 @@ function OwnProfile() {
                     <Articles/>
                     <Posts/>
                     <div className={s.signOut}>
-                        <button onClick={logout}>sign out</button>
+                        <button onClick={logout}>
+                            <NavLink to={'signIn'}>sign out</NavLink>
+                        </button>
                     </div>
                 </div>
             </div>

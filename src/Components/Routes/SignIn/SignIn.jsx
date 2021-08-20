@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import s from "../SignUp/SignUp.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {signInWithEmailAndPasswordThunk} from "../../../redux/reducers/auth-reducer";
-import {Redirect} from "react-router-dom";
+import {NavLink, Redirect} from "react-router-dom";
 
 function SignIn(){
     const {register, formState: {errors}, handleSubmit} = useForm();
@@ -19,7 +19,7 @@ function SignIn(){
                 <div className={s.errorBlock}>
                     <div>
                         <label htmlFor='email'>Email</label>
-                        <input type='email' {...register("email", {required: true})} />
+                        <input type='email' {...register("email", {required: true})} autoFocus={true}/>
                     </div>
                     <div className={s.error}>
                         {errors.email && "Email is required"}
@@ -34,7 +34,10 @@ function SignIn(){
                         {errors.password && "Password is required, min length 6 symbols"}
                     </div>
                 </div>
-                <button className={s.button} type="submit">Sign in</button>
+                <div>
+                    <button className={s.button} type="submit">Sign in</button>
+                    <NavLink to={'signUp'} className={s.navlLink}>Sign up</NavLink>
+                </div>
             </form>
         </div>
     )

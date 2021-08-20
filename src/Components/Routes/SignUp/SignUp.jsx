@@ -20,7 +20,7 @@ function SignUp() {
                 <div className={s.errorBlock}>
                     <div>
                         <label htmlFor='email'>Email</label>
-                        <input type='email' {...register("email", {required: true})} />
+                        <input type='email' {...register("email", {required: true})} autoFocus={true}/>
                     </div>
                     <div className={s.error}>
                         {errors.email && "Email is required"}
@@ -35,7 +35,6 @@ function SignUp() {
                         {errors.password && "Password is required, min length 6 symbols"}
                     </div>
                 </div>
-
                 <button className={s.button} type="submit">Sign up</button>
             </form>
         </div>

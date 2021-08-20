@@ -36,3 +36,7 @@
     background-color: #ababab;
     outline: .1em solid #7b7b86;
 }
+
+.signOut button a{
+    text-decoration: none;
+}
