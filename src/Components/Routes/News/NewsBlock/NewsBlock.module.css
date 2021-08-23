@@ -1,0 +1,47 @@
+.article{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+
+.article:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.article div:first-child{
+    display: flex;
+    align-items: flex-end;
+}
+
+.article h3{
+    margin-right: 20px;
+}
+
+.article h1{
+    margin-bottom: 10px;
+}
+
+.article h2{
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.article h4{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.article a{
+    text-decoration: none;
+    color: black;
+}
+
+.article a:hover{
+    font-weight: bold;
+    color: #0041c0;
+    text-decoration: underline;
+}

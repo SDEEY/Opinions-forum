@@ -1,16 +1,16 @@
-import style from "../IsAuthed.module.css";
+import s from "./DropDownMenuDefault.module.css";
 
-function DropDownMenuDefault(){
+function DropDownMenuDefault(props){
     return(
-        <div className={style.avaAndNickBlock} onClick={() => {
-            setEditMode(true)
-            setEmailAndPasswordBlock(false)
+        <div className={s.avaAndNickBlock} onClick={() => {
+            props.setEditMode(true)
+                props.setEmailAndPasswordBlock(false)
         }}>
             <div>
-                {nickname}
+                {props.nickname}
             </div>
             <div>
-                <img src={avatar} alt={'avatar'}/>
+                <img src={props.avatar} alt={'avatar'}/>
             </div>
         </div>
     )

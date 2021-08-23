@@ -1,0 +1,17 @@
+.avaAndNickBlock{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avaAndNickBlock div:last-child{
+    font-size: 0;
+}
+
+.avaAndNickBlock img{
+    padding: 0 10px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

@@ -3,6 +3,9 @@
 const apiKey = 'AIzaSyCD_vhkYWg-cFyACxAiufKeSiaQwzNIWWw'
 const baseUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:'
 
+
+
+
 export const authApi = {
     async signInWithEmailAndPassword(data) {
         const response = await fetch(`${baseUrl}signInWithPassword?key=${apiKey}`, {
@@ -107,3 +110,12 @@ export const ownProfileApi = {
 
 
 }
+
+export const newsApi = {
+    async getNews(numberOfPage) {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=20&page=${numberOfPage}&apiKey=bb691d2119c0416c96f30bfa8478956a`)
+        return await response.json()
+    },
+
+}
+
