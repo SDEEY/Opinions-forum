@@ -3,14 +3,20 @@ import s from "../SignUp/SignUp.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {signInWithEmailAndPasswordThunk} from "../../../redux/reducers/auth-reducer";
 import {NavLink, Redirect} from "react-router-dom";
+import {useState} from "react";
 
 function SignIn(){
+    const [buttonIsDisabled, setButtonIsDisabled] = useState(false)
+
     const {register, formState: {errors}, handleSubmit} = useForm();
 
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.authReducer.isAuth)
 
-    const signInWithEmailAndPassword = data => dispatch(signInWithEmailAndPasswordThunk(data))
+    const signInWithEmailAndPassword = data => {
+        dispatch(signInWithEmailAndPasswordThunk(data))
+        setButtonIsDisabled(true)
+    }
 
     return(
         isAuth === true ? <Redirect to='/myProfile'/> :
@@ -35,7 +41,7 @@ function SignIn(){
                     </div>
                 </div>
                 <div>
-                    <button className={s.button} type="submit">Sign in</button>
+                    <button disabled={buttonIsDisabled} className={s.button} type="submit">Sign in</button>
                     <NavLink to={'signUp'} className={s.navlLink}>Sign up</NavLink>
                 </div>
             </form>

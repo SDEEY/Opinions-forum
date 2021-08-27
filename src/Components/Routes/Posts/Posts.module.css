@@ -1,0 +1,32 @@
+.posts{
+    background-color: #e5e5e5;
+    padding: 20px 25px;
+}
+
+.divButton{
+    text-align: center;
+}
+
+.divButton p{
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.posts button {
+    font-size: 22px;
+    padding: 4px 16px;
+    border: 0;
+    outline: .1em solid #c2c2c2;;
+    cursor: pointer;
+    background-color: #c2c2c2;
+    box-sizing: border-box;
+}
+
+.posts button:focus{
+    outline: .1em solid #7b7b86;
+}
+
+.posts button:hover {
+    background-color: #ababab;
+    outline: .1em solid #7b7b86;
+}

@@ -1,0 +1,66 @@
+.usersContainer{
+    background-color: #e5e5e5;
+    padding: 20px 25px;
+}
+
+.users{
+    margin-bottom: 20px;
+}
+
+.user{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.user h1{
+    margin-bottom: 4px;
+}
+
+.user img{
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.user a{
+    text-decoration: none;
+    color: black;
+}
+
+.user a:hover{
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.user a:focus{
+    text-decoration: underline;
+    font-weight: 500;
+    border: none;
+    outline: none;
+}
+
+.usersContainer button{
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+    margin-right: 6px;
+}
+
+.usersContainer button:focus{
+    outline: .15em solid #7b7b86;
+}
+
+.usersContainer button:hover{
+    background-color: #ababab;
+    outline: .15em solid #7b7b86;
+}
+
+.followersOrSubscriptionsBlock{
+    width: 250px;
+    height: 305px;
+    overflow-y: auto;
+    border: 1px solid #7b7b86;
+    margin: 8px 8px 0 0;
+    padding: 6px 6px 0 6px;
+}

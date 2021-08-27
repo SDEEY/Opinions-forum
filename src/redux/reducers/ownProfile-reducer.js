@@ -1,4 +1,4 @@
-import avatar from './imgs/Opinions.png'
+// import avatar from './imgs/Opinions.png'
 import {ownProfileApi} from "../../api/api";
 
 const SET_OWN_AVATAR = 'SET_OWN_AVATAR'
@@ -9,9 +9,12 @@ const SET_OWN_CITY = 'SET_OWN_CITY'
 const SET_OWN_INSTAGRAM = 'SET_OWN_INSTAGRAM'
 const SET_OWN_VK = 'SET_OWN_VK'
 const SET_OWN_TELEGRAM = 'SET_OWN_TELEGRAM'
+const SET_OWN_POSTS = 'SET_OWN_POSTS'
+const SET_NEW_OWN_POST = 'SET_NEW_OWN_POST'
+const DELETE_ONE_OWN_POST = 'DELETE_ONE_OWN_POST'
 
 let initialState = {
-    avatar: avatar,
+    avatar: null,
     nickname: '',
     city: '',
     socialMedia: {
@@ -22,7 +25,9 @@ let initialState = {
     dateData: {
         createdAt: '',
         lastLoginAt: ''
-    }
+    },
+    ownPosts: [],
+    deletedPost: null
 }
 
 const ownProfileReducer = (state = initialState, action) => {
@@ -80,18 +85,29 @@ const ownProfileReducer = (state = initialState, action) => {
                     lastLoginAt: action.payload.lastLoginAt
                 }
             }
-
+        case SET_OWN_POSTS:
+            return {
+                ...state,
+                ownPosts: action.payload.ownPosts
+            }
+        case SET_NEW_OWN_POST:
+            return {
+                ...state,
+                ownPosts: state.ownPosts.concat(action.payload.newOwnPost)
+            }
+        case DELETE_ONE_OWN_POST:
+            return {
+                ...state,
+                ownPosts: state.ownPosts.filter(n => n.id !== action.payload.numberOfElementInArray)
+            }
         default:
             return state
     }
 }
 
 export const setOwnAvatar = (urlAvatar) => ({type: SET_OWN_AVATAR, payload: {urlAvatar}})
-
 export const setOwnNickname = (nickname) => ({type: SET_OWN_NICKNAME, payload: {nickname}})
-
 export const updateOwnNickname = (nickname) => ({type: UPDATE_OWN_NICKNAME, payload: {nickname}})
-
 export const setOwnDateData = (createdAtSubstr, lastLoginAtObj) => (
     {
         type: SET_OWN_DATE_DATA,
@@ -101,16 +117,20 @@ export const setOwnDateData = (createdAtSubstr, lastLoginAtObj) => (
         }
     }
 )
-
 export const setOwnCity = (city) => ({type: SET_OWN_CITY, payload: {city}})
-
 export const setOwnInstagram = (instagram) => ({type: SET_OWN_INSTAGRAM, payload: {instagram}})
 export const setOwnVk = (vk) => ({type: SET_OWN_VK, payload: {vk}})
 export const setOwnTelegram = (telegram) => ({type: SET_OWN_TELEGRAM, payload: {telegram}})
+export const setOwnPosts = (ownPosts) => ({type: SET_OWN_POSTS, payload: {ownPosts}})
+export const setNewOwnPost = (newOwnPost) => ({type: SET_NEW_OWN_POST, payload: {newOwnPost}})
+export const deleteOneOwnPost = (numberOfElementInArray) => ({type: DELETE_ONE_OWN_POST, payload: {numberOfElementInArray}})
+
+
+
 
 export const setOwnAvatarThunk = () => async (dispatch) => {
     const response = await ownProfileApi.setOwnAvatar()
-    response.status === 200 && dispatch(setOwnAvatar(response.url))
+    response.status === 200 ? dispatch(setOwnAvatar(response.url)) : alert('error')
 }
 
 export const setOwnNicknameThunk = (idToken) => async (dispatch) => {

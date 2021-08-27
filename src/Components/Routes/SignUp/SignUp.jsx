@@ -4,14 +4,20 @@ import s from './SignUp.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {signUpWithEmailAndPasswordThunk} from "../../../redux/reducers/auth-reducer";
 import {Redirect} from "react-router-dom";
+import {useState} from "react";
 
 function SignUp() {
+    const [buttonIsDisabled, setButtonIsDisabled] = useState(false)
+
     const {register, formState: {errors}, handleSubmit} = useForm();
 
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.authReducer.isAuth)
 
-    const signUpWithEmailAndPassword = data => dispatch(signUpWithEmailAndPasswordThunk(data))
+    const signUpWithEmailAndPassword = data => {
+        dispatch(signUpWithEmailAndPasswordThunk(data))
+        setButtonIsDisabled(true)
+    }
 
     return (
         isAuth === true ? <Redirect to='/myProfile'/> :
@@ -35,7 +41,7 @@ function SignUp() {
                         {errors.password && "Password is required, min length 6 symbols"}
                     </div>
                 </div>
-                <button className={s.button} type="submit">Sign up</button>
+                <button disabled={buttonIsDisabled} className={s.button} type="submit">Sign up</button>
             </form>
         </div>
     );

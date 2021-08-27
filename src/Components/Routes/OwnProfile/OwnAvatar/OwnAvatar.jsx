@@ -11,7 +11,7 @@ function OwnAvatar() {
     return (
         <div className={s.avatarBlock}>
             <div>
-                <img src={avatar} alt={'avatar'}/>
+                <img src={!avatar ? (dispatch(setOwnAvatarThunk()) && avatar) : avatar} alt={'avatar'}/>
             </div>
             <button onClick={setOwnAvatar}>get a picture</button>
         </div>

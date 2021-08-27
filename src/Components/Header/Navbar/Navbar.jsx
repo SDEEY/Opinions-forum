@@ -6,17 +6,7 @@ function Navbar(){
         <nav>
             <ul className={s.ul}>
                 <li>
-                    <NavLink exact to='/'>
-                        Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to='/categories'>
-                        Categories
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to='/news'>
+                    <NavLink to='/'>
                         News
                     </NavLink>
                 </li>
@@ -26,8 +16,8 @@ function Navbar(){
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/articles'>
-                        Articles
+                    <NavLink to='/users'>
+                        Users
                     </NavLink>
                 </li>
             </ul>

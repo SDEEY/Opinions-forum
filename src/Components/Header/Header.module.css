@@ -6,4 +6,12 @@
     background-color: #e5e5e5;
 
     margin-bottom: 10px;
+    z-index: 10000000;
+    position: sticky;
+    top: 0px;
+}
+
+.headerScroll{
+    transition: .5s;
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .5);
 }

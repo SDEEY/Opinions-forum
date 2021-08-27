@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from "react-redux";
 import SignIn from "../SignIn/SignIn";
 import {setIsAuthToFalse} from "../../../redux/reducers/auth-reducer";
 import DateData from "./DateData/DateData";
-import Articles from "./Articles/Articles";
 import Posts from "./Posts/Posts";
 import {NavLink} from "react-router-dom";
 
@@ -26,7 +25,6 @@ function OwnProfile() {
                     <DateData/>
                 </div>
                 <div className={s.ownProfileDivLastChild}>
-                    <Articles/>
                     <Posts/>
                     <div className={s.signOut}>
                         <button onClick={logout}>

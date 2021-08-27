@@ -1,0 +1,20 @@
+.postBlock{
+    margin-bottom: 50px;
+}
+
+.postBlock div{
+    margin-bottom: 6px;
+}
+
+.postBlock a{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.postBlock h1{
+    font-size: 24px;
+}
+
+.postBlock p{
+    font-size: 18px;
+}

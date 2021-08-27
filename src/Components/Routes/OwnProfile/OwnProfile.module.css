@@ -1,7 +1,6 @@
 .ownProfile{
     /*display: flex;*/
     padding: 20px 0 0 25px;
-    height: 400px;
 
     background-color: #e5e5e5;
     position: relative;
@@ -25,7 +24,7 @@
 
     position: absolute;
     right: 25px;
-    top: 300px;
+    top: 303px;
 }
 
 .ownProfile button:focus{

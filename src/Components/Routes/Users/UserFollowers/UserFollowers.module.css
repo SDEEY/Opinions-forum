@@ -1,0 +1,9 @@
+.buttonMore{
+    font-size: 56px;
+    padding: 5px 10px;
+    border: 0;
+    cursor: pointer;
+    background-color: #c2c2c2;
+    width: 100%;
+    margin-right: 0 !important;
+}

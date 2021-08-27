@@ -1,9 +1,11 @@
 import {newsApi} from "../../api/api";
 
 const SET_NEWS = 'SET_NEWS'
+const SET_NEW_NEWS = 'SET_NEW_NEWS'
 
 let initialState = {
-    news: 'qwe'
+    news: null,
+    newNews: []
 }
 
 const newsReducer = (state = initialState, action) => {
@@ -13,18 +15,29 @@ const newsReducer = (state = initialState, action) => {
                 ...state,
                 news: action.payload.news.filter(a => a.content && a.description && a.publishedAt && a.title)
             }
+        case SET_NEW_NEWS:
+            return {
+                ...state,
+                news: state.news.concat(action.payload.newNews.filter(a => a.content && a.description && a.publishedAt && a.title))
+            }
         default:
             return state
     }
 }
 
 const setNews = (news) => ({type: SET_NEWS, payload: {news}})
+export const setNewNews = (newNews) => ({type: SET_NEW_NEWS, payload: {newNews}})
 
 export const setNewsThunk = (numberOfPage) => async (dispatch) => {
     const response = await newsApi.getNews(numberOfPage)
     console.log(response)
-    // dispatch(setNews(response.articles))
     response.status === 'ok' ? dispatch(setNews(response.articles)) : alert(response.message)
+}
+
+export const setNewNewsThunk = (numberOfPage) => async (dispatch) => {
+    const response = await newsApi.getNews(numberOfPage)
+    console.log(response)
+    response.status === 'ok' ? dispatch(setNewNews(response.articles)) : alert(response.message)
 }
 
 export default newsReducer
