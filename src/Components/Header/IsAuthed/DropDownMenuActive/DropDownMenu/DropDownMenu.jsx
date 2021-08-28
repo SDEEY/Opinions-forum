@@ -67,7 +67,7 @@ function DropDownMenu(props) {
                     }}>Change password
                     </li>
                     <li>
-                        <NavLink className={s.textDecoration} to={'signIn'} onClick={logout}>
+                        <NavLink className={s.textDecoration} to={'/signIn'} onClick={logout}>
                             Sign out
                         </NavLink>
                     </li>

@@ -14,7 +14,7 @@ function PostBlock(props){
     return(
         <div className={s.postBlock}>
             <div>
-                <NavLink to={`user/${props.userId}`} onClick={() => dispatch(setUserId(props.userId))}>{user.name}</NavLink>
+                <NavLink to={`/user/${props.userId}`} onClick={() => dispatch(setUserId(props.userId))}>{user.name}</NavLink>
             </div>
             <div>
                 <h1>{props.title}</h1>

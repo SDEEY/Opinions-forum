@@ -16,6 +16,7 @@ function SignIn(){
     const signInWithEmailAndPassword = data => {
         dispatch(signInWithEmailAndPasswordThunk(data))
         setButtonIsDisabled(true)
+        setTimeout(() => setButtonIsDisabled(false), 1000)
     }
 
     return(

@@ -7,8 +7,8 @@ import s from './News.module.css'
 
 function News() {
     const [pageNumber, setPageNumber] = useState(2)
-    const [countryNews, setCountryNews] = useState('ru')
-    const [categoryNews, setCategoryNews] = useState('business')
+    const [countryNews, setCountryNews] = useState('us')
+    const [categoryNews, setCategoryNews] = useState('technology')
 
     const [countryNewsIsShowed, setCountryNewsIsShowed] = useState(false)
     const [categoryNewsIsShowed, setCategoryNewsIsShowed] = useState(false)
