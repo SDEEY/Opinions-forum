@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Opinions-forum/static/css/main.80a195ff.chunk.css",
-    "main.js": "/Opinions-forum/static/js/main.ed07bf8b.chunk.js",
-    "main.js.map": "/Opinions-forum/static/js/main.ed07bf8b.chunk.js.map",
+    "main.js": "/Opinions-forum/static/js/main.3b731b98.chunk.js",
+    "main.js.map": "/Opinions-forum/static/js/main.3b731b98.chunk.js.map",
     "runtime-main.js": "/Opinions-forum/static/js/runtime-main.78080669.js",
     "runtime-main.js.map": "/Opinions-forum/static/js/runtime-main.78080669.js.map",
     "static/js/2.143edcd2.chunk.js": "/Opinions-forum/static/js/2.143edcd2.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.78080669.js",
     "static/js/2.143edcd2.chunk.js",
     "static/css/main.80a195ff.chunk.css",
-    "static/js/main.ed07bf8b.chunk.js"
+    "static/js/main.3b731b98.chunk.js"
   ]
 }
