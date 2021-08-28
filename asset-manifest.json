@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Opinions-forum/static/css/main.80a195ff.chunk.css",
+    "main.js": "/Opinions-forum/static/js/main.218524d4.chunk.js",
+    "main.js.map": "/Opinions-forum/static/js/main.218524d4.chunk.js.map",
+    "runtime-main.js": "/Opinions-forum/static/js/runtime-main.78080669.js",
+    "runtime-main.js.map": "/Opinions-forum/static/js/runtime-main.78080669.js.map",
+    "static/js/2.a4ae831e.chunk.js": "/Opinions-forum/static/js/2.a4ae831e.chunk.js",
+    "static/js/2.a4ae831e.chunk.js.map": "/Opinions-forum/static/js/2.a4ae831e.chunk.js.map",
+    "index.html": "/Opinions-forum/index.html",
+    "static/css/main.80a195ff.chunk.css.map": "/Opinions-forum/static/css/main.80a195ff.chunk.css.map",
+    "static/js/2.a4ae831e.chunk.js.LICENSE.txt": "/Opinions-forum/static/js/2.a4ae831e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.78080669.js",
+    "static/js/2.a4ae831e.chunk.js",
+    "static/css/main.80a195ff.chunk.css",
+    "static/js/main.218524d4.chunk.js"
+  ]
+}
