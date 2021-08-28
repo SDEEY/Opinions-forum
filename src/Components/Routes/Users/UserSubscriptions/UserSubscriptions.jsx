@@ -35,7 +35,7 @@ function UserSubscriptions(props) {
                                         <div>
                                             <h1>{sub.login}</h1>
                                             <span>GitHub: </span>
-                                            <a href={sub.html_url} target={'_blank'}>{sub.login}</a>
+                                            <a href={sub.html_url} target={'_blank'} without rel="noreferrer">{sub.login}</a>
                                         </div>
                                     </div>
                                 </div>)}
@@ -55,7 +55,7 @@ function UserSubscriptions(props) {
                                         <div>
                                             <h1>{sub.login}</h1>
                                             <span>GitHub: </span>
-                                            <a href={sub.html_url} target={'_blank'}>{sub.login}</a>
+                                            <a href={sub.html_url} target={'_blank'} without rel="noreferrer">{sub.login}</a>
                                         </div>
                                     </div>
                                 </div>)}

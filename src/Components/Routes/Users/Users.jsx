@@ -20,12 +20,12 @@ function Users() {
                 users.map(u => <div key={u.id} className={s.users}>
                     <div className={s.user}>
                         <div style={{fontSize: '0px'}}>
-                            <img width={'60px'} src={u.avatar_url}/>
+                            <img width={'60px'} src={u.avatar_url} alt={'userAvatar'}/>
                         </div>
                         <div>
                             <h1>{u.login}</h1>
                             <span>GitHub: </span>
-                            <a href={u.html_url} target={'_blank'}>{u.login}</a>
+                            <a href={u.html_url} target={'_blank'} without rel="noreferrer">{u.login}</a>
                         </div>
                     </div>
                     <div style={{display: 'flex'}}>

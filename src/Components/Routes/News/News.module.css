@@ -3,6 +3,32 @@
     padding: 20px 25px;
 }
 
+.newsEditMode{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newsEditMode div{
+    margin-right: 15px;
+    /*width: 120px;*/
+}
+
+.newsEditMode div ul{
+    width: auto;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.newsEditMode div ul li{
+    cursor: pointer;
+}
+
+.newsEditMode div ul li:hover{
+    background-color: #c2c2c2;
+}
+
 .divButton{
     text-align: center;
 }
@@ -29,4 +55,10 @@
 .news button:hover {
     background-color: #ababab;
     outline: .1em solid #7b7b86;
+}
+
+.divText{
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 5px;
 }

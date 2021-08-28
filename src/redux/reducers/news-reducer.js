@@ -5,7 +5,7 @@ const SET_NEW_NEWS = 'SET_NEW_NEWS'
 
 let initialState = {
     news: null,
-    newNews: []
+    newNews: [],
 }
 
 const newsReducer = (state = initialState, action) => {
@@ -28,14 +28,14 @@ const newsReducer = (state = initialState, action) => {
 const setNews = (news) => ({type: SET_NEWS, payload: {news}})
 export const setNewNews = (newNews) => ({type: SET_NEW_NEWS, payload: {newNews}})
 
-export const setNewsThunk = (numberOfPage) => async (dispatch) => {
-    const response = await newsApi.getNews(numberOfPage)
+export const setNewsThunk = (countryNews, categoryNews, numberOfPage) => async (dispatch) => {
+    const response = await newsApi.getNews(countryNews, categoryNews, numberOfPage)
     console.log(response)
     response.status === 'ok' ? dispatch(setNews(response.articles)) : alert(response.message)
 }
 
-export const setNewNewsThunk = (numberOfPage) => async (dispatch) => {
-    const response = await newsApi.getNews(numberOfPage)
+export const setNewNewsThunk = (countryNews, categoryNews, numberOfPage) => async (dispatch) => {
+    const response = await newsApi.getNews(countryNews, categoryNews, numberOfPage)
     console.log(response)
     response.status === 'ok' ? dispatch(setNewNews(response.articles)) : alert(response.message)
 }

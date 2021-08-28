@@ -112,8 +112,8 @@ export const ownProfileApi = {
 }
 
 export const newsApi = {
-    async getNews(numberOfPage) {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=20&page=${numberOfPage}&apiKey=bb691d2119c0416c96f30bfa8478956a`)
+    async getNews(countryNews, categoryNews, numberOfPage) {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${countryNews}&category=${categoryNews}&pageSize=20&page=${numberOfPage}&apiKey=bb691d2119c0416c96f30bfa8478956a`)
         return await response.json()
     },
 

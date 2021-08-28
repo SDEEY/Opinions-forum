@@ -11,6 +11,7 @@ function CommentsOfPost(props) {
 
     const nickname = useSelector(state => state.ownProfileReducer.nickname)
     const email = useSelector(state => state.authReducer.email)
+    const isAuth = useSelector(state => state.authReducer.isAuth)
 
     const getPostComments = async () => {
         const response = await postsApi.getPostComments(props.postId)
@@ -59,10 +60,11 @@ function CommentsOfPost(props) {
                         </div>
                         <div>{c.body}</div>
                     </div>)}
-                    <form className={s.form} onSubmit={pushCommentInArray}>
-                        <TextareaAutosize autoFocus={true}/>
-                        <button type={'submit'}>Send</button>
-                    </form>
+                    {isAuth ?
+                        <form className={s.form} onSubmit={pushCommentInArray}>
+                            <TextareaAutosize autoFocus={true}/>
+                            <button type={'submit'}>Send</button>
+                        </form> : <div style={{fontWeight: '500'}}>You need to sign in to set comments.</div>}
                 </div> : null}
         </div>
     )

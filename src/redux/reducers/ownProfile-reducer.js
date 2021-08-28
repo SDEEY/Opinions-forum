@@ -1,4 +1,3 @@
-// import avatar from './imgs/Opinions.png'
 import {ownProfileApi} from "../../api/api";
 
 const SET_OWN_AVATAR = 'SET_OWN_AVATAR'

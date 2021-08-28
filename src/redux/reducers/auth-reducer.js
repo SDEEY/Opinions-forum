@@ -3,13 +3,11 @@ import {authApi} from "../../api/api";
 const SET_USER_DATA = 'SET_USER_DATA'
 const SET_IS_AUTH_TO_FALSE = 'SET_IS_AUTH_TO_FALSE'
 const SET_EMAIL = 'SET_EMAIL'
-// const SET_PASSWORD = 'SET_PASSWORD'
 
 let initialState = {
     isAuth: false,
     idToken: null,
     email: '',
-    // password: ''
 }
 
 const authReducer = (state = initialState, action) => {
@@ -30,11 +28,6 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 email: action.payload.email
             }
-        // case SET_PASSWORD:
-        //     return {
-        //         ...state,
-        //         password: action.payload.password
-        //     }
         default:
             return state
     }
@@ -42,7 +35,6 @@ const authReducer = (state = initialState, action) => {
 
 const setUserData = (idToken) => ({type: SET_USER_DATA, payload: {idToken}})
 export const setEmail = (email) => ({type: SET_EMAIL, payload: {email}})
-// export const setPassword = (newPassword) => ({type: SET_PASSWORD, payload: {newPassword}})
 export const setIsAuthToFalse = () => ({type: SET_IS_AUTH_TO_FALSE})
 
 

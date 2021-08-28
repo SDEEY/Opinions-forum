@@ -35,7 +35,7 @@ function UserFollowers(props) {
                                         <div>
                                             <h1>{f.login}</h1>
                                             <span>GitHub: </span>
-                                            <a href={f.html_url} target={'_blank'}>{f.login}</a>
+                                            <a href={f.html_url} target={'_blank'} without rel="noreferrer">{f.login}</a>
                                         </div>
                                     </div>
                                 </div>)}
@@ -55,7 +55,7 @@ function UserFollowers(props) {
                                         <div>
                                             <h1>{f.login}</h1>
                                             <span>GitHub: </span>
-                                            <a href={f.html_url} target={'_blank'}>{f.login}</a>
+                                            <a href={f.html_url} target={'_blank'} without rel="noreferrer">{f.login}</a>
                                         </div>
                                     </div>
                                 </div>)}

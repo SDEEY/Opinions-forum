@@ -5,9 +5,6 @@ const SET_POSTS_USERS = 'SET_POSTS_USERS'
 const SET_USER_ID = 'SET_USER_ID'
 const SET_USER_DATA = 'SET_USER_DATA'
 const SET_USER_POSTS = 'SET_USER_POSTS'
-// const SET_USER_DATA = 'SET_USER_DATA'
-// const SET_POST_COMMENTS = 'SET_POST_COMMENTS'
-// const SET_IS_FETCHING = 'SET_IS_FETCHING'
 
 let initialState = {
     posts: [],
@@ -15,8 +12,6 @@ let initialState = {
     userId: null,
     userData: {},
     userPosts: []
-    // comments: [],
-    // isFetching: false
 }
 
 const postsReducer = (state = initialState, action) => {
@@ -41,16 +36,6 @@ const postsReducer = (state = initialState, action) => {
                 ...state,
                 userData: action.payload.userData
             }
-        // case SET_POST_COMMENTS:
-        //     return {
-        //         ...state,
-        //         comments: action.payload.comments
-        //     }
-        // case SET_IS_FETCHING:
-        //     return {
-        //         ...state,
-        //         isFetching: action.payload.isFetching
-        //     }
         case SET_USER_POSTS:
             return {
                 ...state,
@@ -66,8 +51,6 @@ const setPostsUsers = (users) => ({type: SET_POSTS_USERS, payload: {users}})
 export const setUserId = (userId) => ({type: SET_USER_ID, payload: {userId}})
 const setUserData = (userData) => ({type: SET_USER_DATA, payload: {userData}})
 const setUserPosts = (userPosts) => ({type: SET_USER_POSTS, payload: {userPosts}})
-// const setPostComments = (comments) => ({type: SET_POST_COMMENTS, payload: {comments}})
-// export const setIsFetchingPosts = (isFetching) => ({type: SET_IS_FETCHING, payload: {isFetching}})
 
 
 export const setPostsThunk = () => async (dispatch) => {
